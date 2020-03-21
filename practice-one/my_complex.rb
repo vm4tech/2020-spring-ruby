@@ -19,13 +19,19 @@ class MyComplex
     def imaginary #атрибут чтения imiginary
         @imaginary
     end
-    
-    def other
-        @
-    end
 
-    def multi
-    end
+    # В РАЗРАБОТКЕ
+    # def multiply (other)
+    #     new_real = other.real * @real 
+    #     new_imaginary = other.imaginary + @imaginary
+    #     return MyComplex.new(new_real,new_imaginary)
+    # end
+    
+    # def sub
+    # end
+    
+    # def divide
+    # end
 
 end
 
