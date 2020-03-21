@@ -1,0 +1,9 @@
+class MyComplex
+   def initialize(real,imaginary)
+        @real = real
+        @imaginary = imaginary   
+   end
+   def sum
+   end
+end
+
