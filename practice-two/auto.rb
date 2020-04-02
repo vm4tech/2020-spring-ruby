@@ -9,8 +9,24 @@ class Auto
     @gasoline_consumption = gasoline_consumption
   end
 
+  def getBrand
+    @brand
+  end
+
+  def getModel
+    @model
+  end
+
+  def getManufacture_year
+    @manufacture_year
+  end
+
+  def getGasoline_consumption
+    @gasoline_consumption
+  end
+
   def to_s
-    "\t Марка: #{@brand}
+    "\n\t Марка: #{@brand}
          Модель: #{@model}
          Год выпуска: #{@manufacture_year}
          Расход бензина на 100км: #{@gasoline_consumption}"
