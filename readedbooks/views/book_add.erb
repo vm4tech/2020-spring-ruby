@@ -1,0 +1,38 @@
+
+<% if @params && !@params[:errors].empty? %>
+  <div class="large-12 cell callout">
+    <p>При заполнении формы возникли ошибки</p>
+    <ul>
+      <% @params[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="large-12 cell">
+  <form method="post">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <label>Дата
+            <input type="text" placeholder="YYYY-MM-DD" name="date" value="<%= @params && @params[:date] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <label>Автор
+            <input type="text" placeholder="Donald Ervin Knuth" name="author" value="<%=@params && @params[:author] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <label>Название книги
+            <input type="text" placeholder="The Art of Computer Programming" name="book_name" value="<%= @params && @params[:book_name] %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <input type="submit" value="Добавить книгу" class="button">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

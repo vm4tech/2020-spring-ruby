@@ -1,0 +1,1 @@
+Book = Struct.new(:date,:author,:book_name)
