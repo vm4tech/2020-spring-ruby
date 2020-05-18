@@ -1,6 +1,6 @@
 
 <% if @params && !@params[:errors].empty? %>
-  <div class="large-12 cell callout">
+  <div class="large-12 cell alert callout">
     <p>При заполнении формы возникли ошибки</p>
     <ul>
       <% @params[:errors].each do |error| %>

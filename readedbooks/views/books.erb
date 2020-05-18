@@ -1,8 +1,25 @@
 <div class="grid-x grid-padding-x">
   <div class="large-12 cell">
-    <h3>List books</h3>
+    <h3>Список прочитанных книг</h3>
   </div>
+  
   <div class="large-12 cell">
+    <% if @sorted_books.empty?%>
+      <a href="books/new" class="button">Добавить книгу</a>
+      <% else %>
+      <a href="books/stat" class="button">Посмотреть статистику по месяцам за опредленный год</a>
+      <a href="books/new" class="button">Добавить книгу</a>
+    <%end%>
+      
+    
+  </div>
+
+  <div class="large-12 cell">
+    <% if @sorted_books.empty?%>
+    <div class="callout alert">
+      <h5>Cписок пуст.</h5>
+    
+    <%else%>
       <table>
       <thead>
         <tr>
@@ -19,12 +36,18 @@
         <% end %>
       </tbody>
       </table>
+      <%end%>
   </div>
     
-  <div class="large-12 cell">
-    <a href="books/new" class="button">Добавить книгу</a>
-    <a href="books/stat" class="button">Посмотреть статистику</a>
+    <% if @sorted_books.empty? %>
+      
+    <% else %>
+      <div class="large-12 cell">
+      <a href="books/stat" class="button">Посмотреть статистику по месяцам за опредленный год</a>
+      <a href="books/new" class="button">Добавить книгу</a>
   </div>
+    <% end %>
+  
 
 </div>
 </div>
