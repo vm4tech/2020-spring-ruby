@@ -15,11 +15,6 @@
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
-          <label>Дата
-            <input type="text" placeholder="YYYY-MM-DD" name="date" value="<%= @params && @params[:date] %>">
-          </label>
-        </div>
-        <div class="large-12 cell">
           <label>Автор
             <input type="text" placeholder="Donald Ervin Knuth" name="author" value="<%=@params && @params[:author] %>">
           </label>
@@ -27,12 +22,25 @@
         <div class="large-12 cell">
           <label>Название книги
             <input type="text" placeholder="The Art of Computer Programming" name="book_name" value="<%= @params && @params[:book_name] %>">
+          </label>         
+        </div>
+        <div class="large-12 cell">
+          <label>Дата
+            <input type="text" placeholder="YYYY-MM-DD" name="date" value="<%= @params && @params[:date] %>">
           </label>
         </div>
         <div class="large-12 cell">
-          <input type="submit" value="Добавить книгу" class="button">
+          <input type="submit" value="Сохранить" class="success button">
+          <a href="/" class="hollow button secondary">Назад</a>
         </div>
       </div>
     </div>
   </form>
+  <%# <div class="large-12 cell">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        
+      </div>
+    </div>
+  </div> %>
 </div>

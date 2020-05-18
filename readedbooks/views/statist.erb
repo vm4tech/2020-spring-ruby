@@ -1,10 +1,79 @@
-
 <div class="large-12 cell">
-  <form method="post">
-    <div class="grid-container">
+    <form method="get">
       <div class="grid-x grid-padding-x">
-        Hello!
+         <% @years.each do |year,count|%>
+          <input class ="button" type='submit' name='year' value="<%= year %>"/>
+          <%end%>
+          
       </div>
-    </div>
-  </form>
+    </form>
+    <%if @select_year == nil || @select_year == '' ||  @select_year.to_i > 2020 || @select_year.to_i < 1%>
+    <div class="callout alert">
+      <h5>Выберите год.</h5>
+    <%else%>
+    <div class="callout success">
+      <h5>Выбранный год: <%=@select_year%> </h5>
+        <table> 
+        <thead>
+          <tr>
+            <th>Месяц</th>
+            <th>Количество книг</th>
+          </tr>
+        </thead>
+        <tbody>
+              <% @month.each do |month,count|%>
+            <tr>
+              <%if month == "01"%>
+              <td>Январь</td>
+              <%end%>
+              <%if month == "02"%>
+              <td>Февраль</td>
+              <%end%>
+              <%if month == "03"%>
+              <td>Март</td>
+              <%end%>
+              <%if month == "04"%>
+              <td>Апрель</td>
+              <%end%>
+              <%if month == "05"%>
+              <td>Май</td>
+              <%end%>
+              <%if month == "06"%>
+              <td>Июнь</td>
+              <%end%>
+              <%if month == "07"%>
+              <td>Июль</td>
+              <%end%>
+              <%if month == "08"%>
+              <td>Август</td>
+              <%end%>
+              <%if month == "09"%>
+              <td>Сентябрь</td>
+              <%end%>
+              <%if month == "10"%>
+              <td>Октябрь</td>
+              <%end%>
+              <%if month == "11"%>
+              <td>Ноябрь</td>
+              <%end%>
+              <%if month == "12"%>
+              <td>Декабрь</td>
+              <%end%>
+              <td><%= count %></td>
+            </tr>
+            <%end%>
+          <% end %>
+        </tbody>
+        </table>
+  </div>
+          
+  </div>
+
+  <div class="large-12 cell">
+    <a href="/books/new" class="button">Добавить книгу</a>
+    <a href="/" class="hollow button secondary">Назад</a>
+  </div>
+  <%# <div class="large-12 cell">
+    
+  </div> %>
 </div>

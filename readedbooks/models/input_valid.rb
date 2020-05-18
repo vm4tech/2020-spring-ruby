@@ -3,10 +3,12 @@ module InputValid
         date = el_date || ''
         author = el_author || ''
         book_name = el_book_name || ''
-        pp date
-        pp author
-        pp book_name
-        errors = []
+        # pp date
+        # pp author
+        # pp book_name
+        errors = [].concat(check_author(author))
+                    .concat(check_date_format(date))
+                    .concat(chek_book_name(book_name))
         {
           date: date,
           author: author,
@@ -39,7 +41,7 @@ module InputValid
         if (strDate[0].to_i > 0) && (strDate[0].to_i <= 2020)
           if (strDate[1].to_i > 0) && (strDate[1].to_i <= 12)
             if (strDate[2].to_i > 0) && (strDate[2].to_i <= 31)    
-              date
+              []
             else
               ['День должен быть 0 < x < 32']
             end
