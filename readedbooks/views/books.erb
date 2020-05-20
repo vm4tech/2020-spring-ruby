@@ -13,6 +13,20 @@
       
     
   </div>
+   <div class="large-12 cell">
+    <form method="get">
+      <div class="grid-x grid-padding-x">
+        <div class="large-6 cell">
+          <label>Формат чтения (не работает)
+            <input type="text" placeholder="Не работает.." name="" value="<%= @form_read %>">
+          </label>
+        </div>
+        <div class="large-12 cell">
+          <input type="submit" value="Фильтровать" class="button">
+        </div>
+      </div>
+    </form>
+  </div>
 
   <div class="large-12 cell">
     <% if @sorted_books.empty?%>
@@ -25,6 +39,8 @@
         <tr>
           <th>Дата прочтения</th>
           <th>Автор «Название»</th>
+          <th>Оценка</th>
+          <th>Формат чтения</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +48,8 @@
           <tr>
             <td><%= book.date %></td>
             <td><%= book.author + " - \«#{book.book_name}\» "  %></td>
+            <td><%= book.mark %></td>
+            <td><%= book.form_read %></td>
           </tr>
         <% end %>
       </tbody>

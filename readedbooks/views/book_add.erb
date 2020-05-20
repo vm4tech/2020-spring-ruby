@@ -29,6 +29,32 @@
             <input type="text" placeholder="YYYY-MM-DD" name="date" value="<%= @params && @params[:date] %>">
           </label>
         </div>
+        <div class="large-12 cell">  
+          <label>Форма чтения
+            <select>
+              <option name="form_read" value="бумажная книга">бумажная книга</option>
+              <option name="form_read" value="электорнная книга">электорнная книга</option>
+              <option name="form_read" value="аудиокнига">аудиокнига</option>
+            </select>
+          </label>    
+        </div>
+        <div class="large-12 cell">
+          <label>Размер произведения
+            <input type="text" placeholder="3000" name="count" value="<%= @params && @params[:book_name] %>">
+          </label>         
+        </div>
+        <div class="large-12 cell">
+          <label>Оценка
+            <input type="text" placeholder="10" name="mark" >
+          </label>         
+        </div>
+        <div class="large-12 cell">
+        <label>
+          Рецензия на книгу
+          <textarea name="comment" placeholder="Она такая замечательная, потому что..."></textarea>
+        </label>
+        </div>
+        
         <div class="large-12 cell">
           <input type="submit" value="Сохранить" class="success button">
           <a href="/" class="hollow button secondary">Назад</a>
@@ -36,11 +62,4 @@
       </div>
     </div>
   </form>
-  <%# <div class="large-12 cell">
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        
-      </div>
-    </div>
-  </div> %>
 </div>

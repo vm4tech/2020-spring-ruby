@@ -31,14 +31,14 @@ class BooksList
       str = book.date.split('-')
       book_year = str[0]
       month << str[1] if book_year == select_year
-    end
-    month.sort!
-    month.reverse!
-    # pp month
-    if month.empty?
-      []
-    else
-      month.each_with_object(Hash.new(0)) { |i, a| a[i] += 1 }
+      month.sort!
+      month.reverse!
+      # pp month
+      if month.empty?
+        []
+      else
+        month.each_with_object(Hash.new(0)) { |i, a| a[i] += 1 }
+      end
     end
   end
 
@@ -51,5 +51,12 @@ class BooksList
     years.sort!
     years.reverse!
     years.each_with_object(Hash.new(0)) { |i, a| a[i] += 1 }
+  end
+
+  def sort_form_read(form_read)
+    @books.each do |book|
+      next unless book.form_read.include?(form_read)        
+      
+    end
   end
 end
